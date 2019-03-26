@@ -5,6 +5,8 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+eval $(thefuck --alias)
+
 export TERM=xterm-256color
 export PS1="\W "
 
@@ -20,9 +22,6 @@ export GOPATH=$HOME/src/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
 
-export EDITOR=vim
-export NNN_USE_EDITOR=1
-
-alias count='ls | wc -l'
 alias gotomaya='ssh denis@185.4.64.103'
-alias gotobit='ssh bitcurate@138.68.225.174'
+alias es='sudo docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.6.0'
+alias api='cd /home/denis/src/go/src/github.com/bitcurate/api'

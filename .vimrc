@@ -1,5 +1,5 @@
 "=========================================
-" .vimrc by optic
+" .vimrc by orca84
 "=========================================
 
 set nocompatible
@@ -38,7 +38,6 @@ filetype plugin indent on
 "=========================================
 
 let mapleader = "\<Space>"
-let NERDTreeIgnore = ['__pycache__', 'venv']
 
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
