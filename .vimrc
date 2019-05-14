@@ -81,10 +81,11 @@ map <Leader>o :!<CR>
 "=========================================
 
 autocmd BufWritePre * :%s/\s\+$//e
-" autocmd FileType rust map <Leader>r :!clear;cargo run<CR>
-" autocmd FileType rust map <Leader>b :!clear;cargo build --release<CR>
-" autocmd FileType rust map <Leader>c :!clear;cargo check<CR>
-" autocmd FileType rust map <Leader>t :!clear;cargo test<CR>
+autocmd FileType rust map <Leader>r :!clear;cargo run<CR>
+autocmd FileType rust map <Leader>b :!clear;cargo build --release<CR>
+autocmd FileType rust map <Leader>c :!clear;cargo check<CR>
+autocmd FileType rust map <Leader>t :!clear;cargo test<CR>
+autocmd FileType rust map <Leader>v :!clear;cargo clippy<CR>
 
 autocmd FileType go nmap <leader>r <Plug>(go-run)
 autocmd FileType go nmap <leader>t <Plug>(go-test)
