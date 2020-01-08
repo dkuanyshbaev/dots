@@ -95,6 +95,8 @@ autocmd FileType rust map <Leader>v :!clear;cargo clippy<CR>
 
 " autocmd FileType python map <Leader>r :!clear;python %<CR>
 
+au BufReadPost *.tera set syntax=html
+
 "=========================================
 
 hi Pmenu ctermbg=green gui=bold
