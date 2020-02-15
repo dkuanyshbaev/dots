@@ -30,6 +30,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'rust-lang/rust.vim'
+Plugin 'ziglang/zig.vim'
+Plugin 'arcticicestudio/nord-vim'
 call vundle#end()
 syntax on
 filetype plugin indent on
@@ -45,6 +47,8 @@ let g:tagbar_sort = 0
 
 let g:bufferline_show_bufnr = 0
 let g:rustfmt_autosave = 1
+
+" let g:zig_fmt_autosave = 0
 
 "=========================================
 
@@ -83,6 +87,7 @@ autocmd FileType rust map <Leader>v :!clear;cargo clippy<CR>
 
 "=========================================
 
+colo nord
 hi Pmenu ctermbg=green gui=bold
 hi Visual term=reverse cterm=reverse guibg=Grey
 hi CursorLine cterm=NONE ctermbg=green ctermfg=white
