@@ -87,7 +87,7 @@ autocmd FileType rust map <Leader>v :!clear;cargo clippy<CR>
 
 "=========================================
 
-colo nord
+colorscheme nord
 hi Pmenu ctermbg=green gui=bold
 hi Visual term=reverse cterm=reverse guibg=Grey
 hi CursorLine cterm=NONE ctermbg=green ctermfg=white
