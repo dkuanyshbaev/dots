@@ -32,6 +32,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'rust-lang/rust.vim'
 Plugin 'ziglang/zig.vim'
 Plugin 'arcticicestudio/nord-vim'
+Plugin 'itchyny/lightline.vim'
 call vundle#end()
 syntax on
 filetype plugin indent on
@@ -46,8 +47,13 @@ let g:tagbar_compact = 1
 let g:tagbar_sort = 0
 
 let g:bufferline_show_bufnr = 0
-let g:rustfmt_autosave = 1
+let g:lightline = {'colorscheme': 'nord'}
 
+let g:nord_bold_vertical_split_line = 1
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
+
+let g:rustfmt_autosave = 1
 " let g:zig_fmt_autosave = 0
 
 "=========================================
