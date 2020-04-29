@@ -31,6 +31,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'rust-lang/rust.vim'
 Plugin 'ziglang/zig.vim'
+" Plugin 'fatih/vim-go'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'itchyny/lightline.vim'
 call vundle#end()
@@ -56,6 +57,13 @@ let g:nord_italic_comments = 1
 let g:rustfmt_autosave = 1
 " let g:zig_fmt_autosave = 0
 
+" let g:go_highlight_functions = 1
+" let g:go_highlight_methods = 1
+" let g:go_highlight_structs = 1
+" let g:go_highlight_interfaces = 1
+" let g:go_highlight_operators = 1
+" let g:go_highlight_build_constraints = 1
+
 "=========================================
 
 inoremap kj <esc>
@@ -77,7 +85,9 @@ map <Leader>w :w<CR>
 map <Leader>j :TagbarToggle<CR>
 map <Leader>f :NERDTreeToggle<CR>
 
-" map <Leader>r :!clear;gcc % && ./a.out<CR>
+map <Leader>r :!clear;go run main.go < test<CR>
+
+map <Leader>m :!clear;make && ./a.out<CR>
 map <Leader>o :!<CR>
 
 "=========================================
@@ -90,6 +100,12 @@ autocmd FileType rust map <Leader>b :!clear;cargo build --release<CR>
 autocmd FileType rust map <Leader>c :!clear;cargo check<CR>
 autocmd FileType rust map <Leader>t :!clear;cargo test<CR>
 autocmd FileType rust map <Leader>v :!clear;cargo clippy<CR>
+
+" autocmd FileType go nmap <leader>r <Plug>(go-run)
+" autocmd FileType go nmap <leader>t <Plug>(go-test)
+" autocmd FileType go nmap <leader>b <Plug>(go-build)
+" autocmd FileType go nmap <leader>l <Plug>(go-lint)
+" autocmd FileType go nmap <leader>v <Plug>(go-vet)
 
 "=========================================
 
