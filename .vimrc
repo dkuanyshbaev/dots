@@ -85,8 +85,6 @@ map <Leader>w :w<CR>
 map <Leader>j :TagbarToggle<CR>
 map <Leader>f :NERDTreeToggle<CR>
 
-map <Leader>r :!clear;go run main.go < test<CR>
-
 map <Leader>m :!clear;make && ./a.out<CR>
 map <Leader>o :!<CR>
 
