@@ -1,5 +1,5 @@
 "=========================================
-" .vimrc by orca84
+" .vimrc by denis k.
 "=========================================
 
 set nocompatible
@@ -16,7 +16,8 @@ set scrolloff=0
 set laststatus=2
 set background=light
 set pastetoggle=<F2>
-set ts=4 sts=4 sw=4 expandtab
+set ts=4 sts=4 sw=4
+set expandtab
 
 "=========================================
 
@@ -31,7 +32,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'rust-lang/rust.vim'
-Plugin 'ziglang/zig.vim'
+" Plugin 'ziglang/zig.vim'
 " Plugin 'fatih/vim-go'
 " Plugin 'arcticicestudio/nord-vim'
 " Plugin 'itchyny/lightline.vim'
@@ -48,7 +49,7 @@ let g:tagbar_autoclose = 1
 let g:tagbar_compact = 1
 let g:tagbar_sort = 0
 
-"let g:bufferline_show_bufnr = 0
+let g:bufferline_show_bufnr = 0
 "let g:lightline = {'colorscheme': 'nord'}
 
 "let g:nord_bold_vertical_split_line = 1
@@ -86,7 +87,7 @@ map <Leader>w :w<CR>
 map <Leader>j :TagbarToggle<CR>
 map <Leader>f :NERDTreeToggle<CR>
 
-map <Leader>m :!clear;make && ./a.out<CR>
+"map <Leader>m :!clear;make && ./a.out<CR>
 map <Leader>o :!<CR>
 
 "=========================================
