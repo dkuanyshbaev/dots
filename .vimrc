@@ -31,6 +31,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'rust-lang/rust.vim'
 Plug 'ziglang/zig.vim'
 Plug 'cespare/vim-toml'
+Plug 'ron-rs/ron.vim'
 call plug#end()
 
 "=========================================
@@ -63,7 +64,7 @@ map <Leader>h :nohl<CR>
 map <Leader>q :q<CR>
 map <Leader>w :w<CR>
 
-" map <Leader>j :TagbarToggle<CR>
+map <Leader>j :TagbarToggle<CR>
 map <Leader>f :NERDTreeToggle<CR>
 map <Leader>o :!<CR>
 
@@ -72,8 +73,13 @@ map <Leader>o :!<CR>
 autocmd BufWritePre * :%s/\s\+$//e
 au BufReadPost *.tera set syntax=html
 
-autocmd FileType rust map <Leader>r :!clear;cargo run -- --dev<CR>
+autocmd FileType zig map <Leader>r :!clear;zig build run<CR>
+autocmd FileType zig map <Leader>t :!clear;zig build test<CR>
+
+" autocmd FileType rust map <Leader>r :!clear;cargo run -- --dev<CR>
+autocmd FileType rust map <Leader>r :!clear;SECRET=shuba cargo run<CR>
 autocmd FileType rust map <Leader>b :!clear;cargo build<CR>
+" autocmd FileType rust map <Leader>b :!clear;cargo build --no-default-features --features discovery<CR>
 autocmd FileType rust map <Leader>c :!clear;cargo check<CR>
 autocmd FileType rust map <Leader>t :!clear;cargo test<CR>
 autocmd FileType rust map <Leader>v :!clear;cargo clippy<CR>
