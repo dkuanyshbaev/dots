@@ -31,7 +31,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'rust-lang/rust.vim'
 Plug 'ziglang/zig.vim'
 Plug 'cespare/vim-toml'
-Plug 'ron-rs/ron.vim'
+Plug 'nordtheme/vim'
 call plug#end()
 
 "=========================================
@@ -45,6 +45,10 @@ let g:tagbar_sort = 0
 
 let g:bufferline_show_bufnr = 0
 let g:rustfmt_autosave = 1
+
+let g:nord_bold_vertical_split_line = 1
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
 
 "=========================================
 
@@ -86,6 +90,7 @@ autocmd FileType rust map <Leader>v :!clear;cargo clippy<CR>
 
 "=========================================
 
+colorscheme nord
 hi Pmenu ctermbg=green gui=bold
 hi Visual term=reverse cterm=reverse guibg=Grey
 hi CursorLine cterm=NONE ctermbg=green ctermfg=white
