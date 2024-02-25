@@ -29,7 +29,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
 Plug 'jiangmiao/auto-pairs'
 Plug 'rust-lang/rust.vim'
-Plug 'ziglang/zig.vim'
+" Plug 'ziglang/zig.vim'
 Plug 'cespare/vim-toml'
 Plug 'nordtheme/vim'
 call plug#end()
@@ -77,11 +77,10 @@ map <Leader>o :!<CR>
 autocmd BufWritePre * :%s/\s\+$//e
 au BufReadPost *.tera set syntax=html
 
-autocmd FileType zig map <Leader>r :!clear;zig build run<CR>
-autocmd FileType zig map <Leader>t :!clear;zig build test<CR>
+" autocmd FileType zig map <Leader>r :!clear;zig build run<CR>
+" autocmd FileType zig map <Leader>t :!clear;zig build test<CR>
 
-" autocmd FileType rust map <Leader>r :!clear;cargo run -- --dev<CR>
-autocmd FileType rust map <Leader>r :!clear;SECRET=shuba cargo run<CR>
+autocmd FileType rust map <Leader>r :!clear;cargo run<CR>
 autocmd FileType rust map <Leader>b :!clear;cargo build<CR>
 " autocmd FileType rust map <Leader>b :!clear;cargo build --no-default-features --features discovery<CR>
 autocmd FileType rust map <Leader>c :!clear;cargo check<CR>
