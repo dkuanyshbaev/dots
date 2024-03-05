@@ -69,6 +69,11 @@
 
   services.udisks2.enable = true;
 
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTR{idVendor}=="0d28", ATTR{idProduct}=="0204", MODE:="666"
+  '';
+
+ 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -80,8 +85,8 @@
     curl
     htop
     dmenu
-    rustup
     ctags
+    rustup
     clang
     cmake 
     libclang 
@@ -96,7 +101,9 @@
     zathura
     nethack
     helix
-    #python311
+    bat
+    vis
+    milkytracker
     #nix-prefetch-github
   ];
 
