@@ -76,6 +76,8 @@ map <Leader>o :!<CR>
 autocmd BufWritePre * :%s/\s\+$//e
 au BufReadPost *.tera set syntax=html
 
+autocmd FileType c map <Leader>r :!clear;make;./bin/project_v<CR>
+
 autocmd FileType rust map <Leader>r :!clear;cargo run<CR>
 autocmd FileType rust map <Leader>b :!clear;cargo build<CR>
 autocmd FileType rust map <Leader>c :!clear;cargo check<CR>
