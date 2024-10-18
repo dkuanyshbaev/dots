@@ -30,7 +30,7 @@ Plug 'majutsushi/tagbar'
 Plug 'jiangmiao/auto-pairs'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
-Plug 'nordtheme/vim'
+"Plug 'nordtheme/vim'
 call plug#end()
 
 "=========================================
@@ -45,9 +45,9 @@ let g:tagbar_sort = 0
 let g:bufferline_show_bufnr = 0
 let g:rustfmt_autosave = 1
 
-let g:nord_bold_vertical_split_line = 1
-let g:nord_italic = 1
-let g:nord_italic_comments = 1
+"let g:nord_bold_vertical_split_line = 1
+"let g:nord_italic = 1
+"let g:nord_italic_comments = 1
 
 "=========================================
 
@@ -74,9 +74,8 @@ map <Leader>o :!<CR>
 "=========================================
 
 autocmd BufWritePre * :%s/\s\+$//e
-au BufReadPost *.tera set syntax=html
 
-autocmd FileType c map <Leader>r :!clear;make;./bin/project_v<CR>
+autocmd FileType c map <Leader>r :!clear;make run;<CR>
 
 autocmd FileType rust map <Leader>r :!clear;cargo run<CR>
 autocmd FileType rust map <Leader>b :!clear;cargo build<CR>
@@ -86,7 +85,7 @@ autocmd FileType rust map <Leader>v :!clear;cargo clippy<CR>
 
 "=========================================
 
-colorscheme nord
+"colorscheme nord
 hi Pmenu ctermbg=green gui=bold
 hi Visual term=reverse cterm=reverse guibg=Grey
 hi CursorLine cterm=NONE ctermbg=green ctermfg=white

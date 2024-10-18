@@ -1,3 +1,0 @@
-theme = "nord"
-[keys.insert]
-k = { j = "normal_mode" }
