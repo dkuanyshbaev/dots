@@ -10,7 +10,7 @@ set noswapfile
 set shiftround
 set scrolloff=0
 set laststatus=2
-" set background=light
+set background=light
 set pastetoggle=<F2>
 set ts=4 sts=4 sw=4
 set expandtab
@@ -76,8 +76,8 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 autocmd FileType c map <Leader>r :!clear;make run;<CR>
 
-autocmd FileType zig map <Leader>r :!clear;zig build run;<CR>
-autocmd FileType zig map <Leader>t :!clear;zig build test;<CR>
+" autocmd FileType zig map <Leader>r :!clear;zig build run;<CR>
+" autocmd FileType zig map <Leader>t :!clear;zig build test;<CR>
 
 autocmd FileType rust map <Leader>r :!clear;cargo run<CR>
 autocmd FileType rust map <Leader>b :!clear;cargo build<CR>
@@ -87,7 +87,7 @@ autocmd FileType rust map <Leader>v :!clear;cargo clippy<CR>
 
 "=========================================
 
-colorscheme slate
+" colorscheme slate
 " hi Pmenu ctermbg=green gui=bold
 " hi Visual term=reverse cterm=reverse guibg=Grey
-" hi CursorLine cterm=NONE ctermbg=green ctermfg=white
+hi CursorLine cterm=NONE ctermbg=green ctermfg=white
