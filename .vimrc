@@ -79,8 +79,11 @@ autocmd FileType c map <Leader>r :!clear;make run;<CR>
 " autocmd FileType zig map <Leader>r :!clear;zig build run;<CR>
 " autocmd FileType zig map <Leader>t :!clear;zig build test;<CR>
 
+autocmd FileType ada map <Leader>r :!clear;alr run;<CR>
+
 autocmd FileType rust map <Leader>r :!clear;cargo run<CR>
-autocmd FileType rust map <Leader>b :!clear;cargo build<CR>
+" autocmd FileType rust map <Leader>b :!clear;cargo build<CR>
+autocmd FileType rust map <Leader>b :!clear;cargo build --features runtime-benchmarks<CR>
 autocmd FileType rust map <Leader>c :!clear;cargo check<CR>
 autocmd FileType rust map <Leader>t :!clear;cargo test<CR>
 autocmd FileType rust map <Leader>v :!clear;cargo clippy<CR>
