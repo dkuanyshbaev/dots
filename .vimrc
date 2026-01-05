@@ -35,7 +35,11 @@ Plug 'majutsushi/tagbar'
 Plug 'jiangmiao/auto-pairs'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
+" Plug 'ycm-core/YouCompleteMe'
 "Plug 'ziglang/zig.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
 call plug#end()
 
 "=========================================
@@ -50,6 +54,19 @@ let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
 let g:tagbar_compact = 1
 let g:tagbar_sort = 0
+
+let g:go_highlight_structs = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_function_calls = 1
+
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+
+let g:go_fmt_command = "goimports"
 
 "=========================================
 
@@ -76,14 +93,21 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 autocmd FileType c map <Leader>r :!clear;make run;<CR>
 
+autocmd FileType go nmap <leader>r <Plug>(go-run)
+autocmd FileType go nmap <leader>b <Plug>(go-build)
+autocmd FileType go nmap <leader>t <Plug>(go-test)
+autocmd FileType go nmap <leader>v <Plug>(go-vet)
+autocmd FileType go nmap <leader>D <Plug>(go-doc)
+" autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+
 " autocmd FileType zig map <Leader>r :!clear;zig build run;<CR>
 " autocmd FileType zig map <Leader>t :!clear;zig build test;<CR>
 
 autocmd FileType ada map <Leader>r :!clear;alr run;<CR>
 
 autocmd FileType rust map <Leader>r :!clear;cargo run<CR>
-" autocmd FileType rust map <Leader>b :!clear;cargo build<CR>
-autocmd FileType rust map <Leader>b :!clear;cargo build --features runtime-benchmarks<CR>
+autocmd FileType rust map <Leader>b :!clear;cargo build<CR>
+" autocmd FileType rust map <Leader>b :!clear;cargo build --release --features runtime-benchmarks<CR>
 autocmd FileType rust map <Leader>c :!clear;cargo check<CR>
 autocmd FileType rust map <Leader>t :!clear;cargo test<CR>
 autocmd FileType rust map <Leader>v :!clear;cargo clippy<CR>
@@ -91,6 +115,6 @@ autocmd FileType rust map <Leader>v :!clear;cargo clippy<CR>
 "=========================================
 
 " colorscheme slate
-" hi Pmenu ctermbg=green gui=bold
-" hi Visual term=reverse cterm=reverse guibg=Grey
+hi Pmenu ctermbg=green gui=bold
+hi Visual term=reverse cterm=reverse guibg=Grey
 hi CursorLine cterm=NONE ctermbg=green ctermfg=white
