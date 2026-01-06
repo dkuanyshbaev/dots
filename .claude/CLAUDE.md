@@ -2,29 +2,26 @@
 
 ## Mode
 
-- DO NOT run cargo without explicit permission
 - DO NOT modify files without explicit permission
+- I make changes myself
+- DO NOT run cargo without explicit permission
 - Explain what you propose first
 - Wait for confirmation before action
-- I make changes myself
 
 Default: analyze and discuss.
 Read code, explain, suggest — but don't act.
 
 ## Language
 
-- Respond in Russian
 - Code comments in English
 - Keep answers short
 
 ## Rust
 
 - Async: tokio
-- Errors: thiserror + anyhow
-- Logging: tracing
 - Serialization: serde
+- Logging: tracing
 - No unwrap() in production code
-- Clippy before commit
 
 ## Git
 
@@ -33,7 +30,8 @@ Read code, explain, suggest — but don't act.
 
 ## Code search
 
-- Use grep/ripgrep, don't read files manually
+- Use your built-it Grep tool, don't read files manually
+- Show what you searched for
 - Show the command you executed
 
 ## Don't

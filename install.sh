@@ -6,6 +6,7 @@ DOTS=~/src/dots
 # Claude Code
 mkdir -p ~/.claude
 ln -sf "$DOTS/.claude/CLAUDE.md" ~/.claude/CLAUDE.md
+ln -sf "$DOTS/.claude/settings.json" ~/.claude/settings.json
 
 # Vim
 #ln -sf "$DOTS/.vimrc" ~/.vimrc
