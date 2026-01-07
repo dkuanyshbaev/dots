@@ -7,7 +7,8 @@
       "Bash(cargo test:*)",
       "Bash(git status:*)",
       "Bash(git diff:*)",
-      "Bash(git log:*)"
+      "Bash(git log:*)",
+      "Bash(git show:*)"
     ],
     "deny": [
       "Bash(cargo build:*)",
@@ -16,19 +17,6 @@
       "Read(./.env)",
       "Read(./.env.*)",
       "Edit(./Cargo.lock)"
-    ]
-  },
-  "hooks": {
-    "PostToolUse": [
-      {
-        "matcher": "Edit|Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "jq -r '.tool_input.file_path' | { read file_path; if echo \"$file_path\" | grep -q '\\.rs$'; then cargo fmt -- \"$file_path\" 2>/dev/null || true; fi; }"
-          }
-        ]
-      }
     ]
   }
 }
