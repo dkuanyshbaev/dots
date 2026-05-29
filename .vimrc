@@ -35,11 +35,13 @@ Plug 'majutsushi/tagbar'
 Plug 'jiangmiao/auto-pairs'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
-" Plug 'ycm-core/YouCompleteMe'
 "Plug 'ziglang/zig.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Plug 'junegunn/fzf.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'nordtheme/vim'
 call plug#end()
 
 "=========================================
@@ -49,24 +51,19 @@ let g:SuperTabCrMapping=1
 let g:bufferline_show_bufnr = 0
 let g:rustfmt_autosave = 1
 
+let g:lsp_document_code_action_signs_enabled = 0
+let g:lsp_diagnostics_signs_enabled = 0
+let g:lsp_diagnostics_virtual_text_enabled = 0
+
 let g:tagbar_ctags_bin = "/usr/bin/ctags-universal"
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
 let g:tagbar_compact = 1
 let g:tagbar_sort = 0
 
-let g:go_highlight_structs = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_function_calls = 1
-
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
-
-let g:go_fmt_command = "goimports"
+let g:nord_bold_vertical_split_line = 1
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
 
 "=========================================
 
@@ -112,9 +109,14 @@ autocmd FileType rust map <Leader>c :!clear;cargo check<CR>
 autocmd FileType rust map <Leader>t :!clear;cargo test<CR>
 autocmd FileType rust map <Leader>v :!clear;cargo clippy<CR>
 
+autocmd FileType rust nmap gd :LspDefinition<CR>
+autocmd FileType rust nmap gr :LspReferences<CR>
+autocmd FileType rust nmap K :LspHover<CR>
+autocmd FileType rust nmap I :LspDocumentDiagnostics<CR>
+
 "=========================================
 
-" colorscheme slate
+colorscheme nord
 hi Pmenu ctermbg=green gui=bold
 hi Visual term=reverse cterm=reverse guibg=Grey
 hi CursorLine cterm=NONE ctermbg=green ctermfg=white

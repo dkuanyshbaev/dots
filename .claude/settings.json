@@ -21,5 +21,10 @@
       "Read(./.env.*)",
       "Edit(./Cargo.lock)"
     ]
+  },
+  "effortLevel": "high",
+  "editorMode": "vim",
+  "enabledPlugins": {
+    "rust-analyzer-lsp@claude-plugins-official": true
   }
 }
