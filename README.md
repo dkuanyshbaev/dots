@@ -18,6 +18,7 @@ Editing a file here = editing the live config.
 - `.claude/` — Claude Code: `CLAUDE.md`, `settings.json`, `commands/`
 - `sway/config` — Sway compositor config → `~/.config/sway/config`
 - `sway/foot.ini` — foot terminal config → `~/.config/foot/foot.ini`
+- `waybar/` — waybar panel: `config.jsonc`, `style.css` → `~/.config/waybar/`
 - `ssh/` — ssh-agent as a systemd user service (see below)
 - `.vimrc`, `.tmux.conf` — vim / tmux (symlinks commented out in `install.sh`)
 - `vis/` — vis editor

@@ -14,6 +14,11 @@ mkdir -p ~/.config/sway ~/.config/foot
 ln -sf "$DOTS/sway/config"   ~/.config/sway/config
 ln -sf "$DOTS/sway/foot.ini" ~/.config/foot/foot.ini
 
+# Waybar
+mkdir -p ~/.config/waybar
+ln -sf "$DOTS/waybar/config.jsonc" ~/.config/waybar/config.jsonc
+ln -sf "$DOTS/waybar/style.css"    ~/.config/waybar/style.css
+
 # SSH agent (systemd user service + environment.d) + ssh client config
 mkdir -p ~/.config/environment.d ~/.config/systemd/user
 ln -sf "$DOTS/ssh/ssh-agent.conf"    ~/.config/environment.d/ssh-agent.conf
