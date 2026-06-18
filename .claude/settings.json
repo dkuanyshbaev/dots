@@ -8,15 +8,18 @@
       "Bash(cargo clippy:*)",
       "Bash(cargo fmt:*)",
       "Bash(cargo test:*)",
+      "Bash(cargo audit:*)",
+      "Bash(cargo build:*)",
       "Bash(git status:*)",
       "Bash(git diff:*)",
       "Bash(git log:*)",
       "Bash(git show:*)"
     ],
     "deny": [
-      "Bash(cargo build:*)",
       "Bash(cargo run:*)",
+      "Bash(gh pr merge:*)",
       "Bash(rm -rf:*)",
+      "Bash(rm -fr:*)",
       "Read(./.env)",
       "Read(./.env.*)",
       "Edit(./Cargo.lock)"
@@ -25,6 +28,7 @@
   "env": {
     "DISABLE_AUTOUPDATER": "1"
   },
+  "includeCoAuthoredBy": false,
   "effortLevel": "high",
   "editorMode": "vim",
   "enabledPlugins": {

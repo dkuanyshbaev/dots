@@ -1,12 +1,12 @@
 Linear workflow: create a card, list my active tasks, or close a task. Intent + args in $ARGUMENTS.
 
-Use the linear MCP tools. Default team: SDK Engineering.
+Use the linear MCP tools. Default team: Core Engineering.
 Reads are free. Before any write (create/close): show what will be written, then wait for my explicit OK before doing it — never write without it.
 
 Pick one intent from $ARGUMENTS (create | mine | close):
 
 ## create — new issue
-- Strip the leading intent keyword from $ARGUMENTS; the remainder is the title. Assignee: me. Team: SDK Engineering unless another team is named.
+- Strip the leading intent keyword from $ARGUMENTS; the remainder is the title. Assignee: me. Team: Core Engineering unless another team is named.
 - Description: very brief, plain text/markdown, and only if it adds something beyond the title.
 - Show the proposed title, team and assignee, then wait for my explicit OK before creating. Return the identifier + URL.
 
