@@ -8,6 +8,7 @@ mkdir -p ~/.claude
 ln -sf "$DOTS/.claude/CLAUDE.md" ~/.claude/CLAUDE.md
 ln -sf "$DOTS/.claude/settings.json" ~/.claude/settings.json
 ln -sf "$DOTS/.claude/commands" ~/.claude/commands
+ln -sf "$DOTS/.claude/agents" ~/.claude/agents
 
 # Sway + foot
 mkdir -p ~/.config/sway ~/.config/foot
