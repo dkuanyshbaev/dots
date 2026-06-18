@@ -22,6 +22,9 @@
       "Edit(./Cargo.lock)"
     ]
   },
+  "env": {
+    "DISABLE_AUTOUPDATER": "1"
+  },
   "effortLevel": "high",
   "editorMode": "vim",
   "enabledPlugins": {

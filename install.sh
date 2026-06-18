@@ -12,6 +12,7 @@ ln -sf "$DOTS/.claude/commands" ~/.claude/commands
 # Sway + foot
 mkdir -p ~/.config/sway ~/.config/foot
 ln -sf "$DOTS/sway/config"   ~/.config/sway/config
+ln -sf "$DOTS/sway/config.d" ~/.config/sway/config.d
 ln -sf "$DOTS/sway/foot.ini" ~/.config/foot/foot.ini
 
 # Waybar
