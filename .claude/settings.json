@@ -9,7 +9,6 @@
       "Bash(cargo fmt:*)",
       "Bash(cargo test:*)",
       "Bash(cargo audit:*)",
-      "Bash(cargo build:*)",
       "Bash(git status:*)",
       "Bash(git diff:*)",
       "Bash(git log:*)",
@@ -29,10 +28,22 @@
       "Bash(tail:*)",
       "Bash(find:*)",
       "Bash(which:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr list:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(gh pr checks:*)",
+      "Bash(gh issue view:*)",
+      "Bash(gh issue list:*)",
+      "Bash(gh run view:*)",
+      "Bash(gh run list:*)",
+      "Bash(gh repo view:*)",
+      "Bash(gh search:*)",
       "Bash(cd /home/denis/src/anyip:*)",
-      "Bash(cd /home/denis/src/anyip/worktrees:*)",
-      "Edit(/home/denis/src/anyip/worktrees/**)",
-      "Write(/home/denis/src/anyip/worktrees/**)",
+      "Edit(/home/denis/src/anyip/*/.claude/worktrees/**)",
+      "Write(/home/denis/src/anyip/*/.claude/worktrees/**)",
+      "Edit(/home/denis/src/anyip/.claude/worktrees/**)",
+      "Write(/home/denis/src/anyip/.claude/worktrees/**)",
+      "mcp__linear__extract_images",
       "mcp__linear__get_attachment",
       "mcp__linear__get_diff",
       "mcp__linear__get_diff_threads",
@@ -62,16 +73,16 @@
     ],
     "deny": [
       "Bash(cargo run:*)",
+      "Bash(git push:*)",
       "Bash(gh pr merge:*)",
+      "Bash(gh pr create:*)",
       "Bash(rm -rf:*)",
       "Bash(rm -fr:*)",
-      "Read(./.env)",
-      "Read(./.env.*)",
-      "Edit(./Cargo.lock)"
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Edit(**/Cargo.lock)",
+      "Write(**/Cargo.lock)"
     ]
-  },
-  "worktree": {
-    "bgIsolation": "none"
   },
   "env": {
     "DISABLE_AUTOUPDATER": "1"
