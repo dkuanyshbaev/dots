@@ -75,6 +75,9 @@ output * bg #2e3440 solid_color
     # Kill focused window
     bindsym $mod+Shift+q kill
 
+    # Lock the screen
+    bindsym $mod+Escape exec loginctl lock-session
+
     # Start your launcher
     bindsym $mod+d exec $menu
 

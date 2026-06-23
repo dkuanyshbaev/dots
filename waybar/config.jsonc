@@ -7,35 +7,45 @@
         "sway/mode"
     ],
     "modules-center": [
-        "sway/window"
+        "clock"
     ],
     "modules-right": [
         "pulseaudio",
-        "network",
+        // "network",
         "sway/language",
         "tray"
     ],
+    "sway/workspaces": {
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": []
+        }
+    },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
+    },
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip": false
     },
     "tray": {
         "spacing": 10
     },
-    "network": {
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
+    // "network": {
+    //     "format-wifi": "{essid} ({signalStrength}%) ",
+    //     "format-ethernet": "{ipaddr}/{cidr} ",
+    //     "tooltip-format": "{ifname} via {gwaddr} ",
+    //     "format-linked": "{ifname} (No IP) ",
+    //     "format-disconnected": "Disconnected ⚠",
+    //     "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    // },
     "pulseaudio": {
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",

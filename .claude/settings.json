@@ -14,6 +14,25 @@
       "Bash(git diff:*)",
       "Bash(git log:*)",
       "Bash(git show:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git branch:*)",
+      "Bash(git checkout:*)",
+      "Bash(git restore:*)",
+      "Bash(git fetch:*)",
+      "Bash(git worktree:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(find:*)",
+      "Bash(which:*)",
+      "Bash(cd /home/denis/src/anyip:*)",
+      "Bash(cd /home/denis/src/anyip/worktrees:*)",
+      "Edit(/home/denis/src/anyip/worktrees/**)",
+      "Write(/home/denis/src/anyip/worktrees/**)",
       "mcp__linear__get_attachment",
       "mcp__linear__get_diff",
       "mcp__linear__get_diff_threads",
@@ -50,6 +69,9 @@
       "Read(./.env.*)",
       "Edit(./Cargo.lock)"
     ]
+  },
+  "worktree": {
+    "bgIsolation": "none"
   },
   "env": {
     "DISABLE_AUTOUPDATER": "1"
