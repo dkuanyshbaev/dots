@@ -1,46 +1,38 @@
+" vim-plug bootstrap (run once on a fresh machine, then :PlugInstall):
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 set nocompatible
-set nonumber
 set nowrap
 set hidden
 set hlsearch
 set incsearch
-set smartindent
+set autoindent
 set nobackup
 set noswapfile
 set shiftround
-set scrolloff=0
 set laststatus=2
-set background=light
-set pastetoggle=<F2>
+set background=dark
+set termguicolors
 set ts=4 sts=4 sw=4
 set expandtab
-" set completeopt-=preview
+
+syntax on
+filetype plugin indent on
+
 set complete=.,w,b,t
-" The default is ".,w,b,u,t,i", which means to scan:
-"    1. the current buffer
-"    2. buffers in other windows
-"    3. other loaded buffers
-"    4. unloaded buffers
-"    5. tags
-"    6. included files
+" scan: current buffer (.), other windows (w), loaded buffers (b), tags (t)
+" dropped vs default: u (unloaded buffers), i (included files) - noisy/slow for Rust
 
 "=========================================
 
 call plug#begin('~/.vim/plugged')
-Plug 'vim-scripts/tComment'
+Plug 'tpope/vim-commentary'
 Plug 'bling/vim-bufferline'
 Plug 'ervandew/supertab'
-Plug 'scrooloose/nerdtree'
-Plug 'majutsushi/tagbar'
+Plug 'preservim/nerdtree'
+Plug 'preservim/tagbar'
 Plug 'jiangmiao/auto-pairs'
 Plug 'rust-lang/rust.vim'
-Plug 'cespare/vim-toml'
-"Plug 'ziglang/zig.vim'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" Plug 'junegunn/fzf.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
 Plug 'nordtheme/vim'
 call plug#end()
 
@@ -51,11 +43,6 @@ let g:SuperTabCrMapping=1
 let g:bufferline_show_bufnr = 0
 let g:rustfmt_autosave = 1
 
-let g:lsp_document_code_action_signs_enabled = 0
-let g:lsp_diagnostics_signs_enabled = 0
-let g:lsp_diagnostics_virtual_text_enabled = 0
-
-let g:tagbar_ctags_bin = "/usr/bin/ctags-universal"
 let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
 let g:tagbar_compact = 1
@@ -86,21 +73,12 @@ map <Leader>o :!<CR>
 
 "=========================================
 
-autocmd BufWritePre * :%s/\s\+$//e
-
-autocmd FileType c map <Leader>r :!clear;make run;<CR>
-
-autocmd FileType go nmap <leader>r <Plug>(go-run)
-autocmd FileType go nmap <leader>b <Plug>(go-build)
-autocmd FileType go nmap <leader>t <Plug>(go-test)
-autocmd FileType go nmap <leader>v <Plug>(go-vet)
-autocmd FileType go nmap <leader>D <Plug>(go-doc)
-" autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
-
-" autocmd FileType zig map <Leader>r :!clear;zig build run;<CR>
-" autocmd FileType zig map <Leader>t :!clear;zig build test;<CR>
-
-autocmd FileType ada map <Leader>r :!clear;alr run;<CR>
+function! s:StripTrailingWhitespace()
+  let l:view = winsaveview()
+  keeppatterns %s/\s\+$//e
+  call winrestview(l:view)
+endfunction
+autocmd BufWritePre * if &filetype !=# 'rust' | call s:StripTrailingWhitespace() | endif
 
 autocmd FileType rust map <Leader>r :!clear;cargo run<CR>
 autocmd FileType rust map <Leader>b :!clear;cargo build<CR>
@@ -109,14 +87,6 @@ autocmd FileType rust map <Leader>c :!clear;cargo check<CR>
 autocmd FileType rust map <Leader>t :!clear;cargo test<CR>
 autocmd FileType rust map <Leader>v :!clear;cargo clippy<CR>
 
-autocmd FileType rust nmap gd :LspDefinition<CR>
-autocmd FileType rust nmap gr :LspReferences<CR>
-autocmd FileType rust nmap K :LspHover<CR>
-autocmd FileType rust nmap I :LspDocumentDiagnostics<CR>
-
 "=========================================
 
 colorscheme nord
-hi Pmenu ctermbg=green gui=bold
-hi Visual term=reverse cterm=reverse guibg=Grey
-hi CursorLine cterm=NONE ctermbg=green ctermfg=white
