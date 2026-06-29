@@ -15,6 +15,7 @@ set background=dark
 set termguicolors
 set ts=4 sts=4 sw=4
 set expandtab
+set scrolloff=0
 
 syntax on
 filetype plugin indent on
