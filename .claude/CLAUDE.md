@@ -7,26 +7,22 @@
 
 ## How we work
 
-I design and decide; execution is delegated. My role is orchestrator and reviewer, not typist.
+We work directly, the two of us. There is no delegation pipeline, no worker/reviewer agents, no worktrees. You write the code; I decide and I merge.
 
-- The work flows: understand → decide → spec → execute → review → merge. I own the first three and the last; execution and review are delegated.
-- Execution runs through sub-agents with roles. Two channels, depending on the project:
-  - local role-agents you spawn — work in any repo, no infra
-  - an async worker where one is set up — heavy, unattended jobs
-- Describe delegation by channel, not by tool name — the model is the same whichever runs it.
+The loop, per task: understand → decide → plan → execute → review → merge. You own "understand" and "execute"; I own "decide" and "merge".
 
-## Roles & the loop
-
-- Orchestrator (you + me): on my command you explore the code and bring back what I need to know; you capture my decision into a spec, dispatch it, and surface the reviewer's findings to me.
-- Worker: implements an agreed spec in an isolated worktree and returns a diff. Makes no design decisions. On any ambiguity or problem it stops with an explanation rather than guessing — we clarify, then resume the same agent.
-- Reviewer: adversarially reviews the worker's diff. Surfaces bugs and the decisions embedded in the diff, not just a verdict.
-- Rework loop: worker and reviewer iterate at most 2 rounds. Not satisfied after the second → stop and bring it to us (clarify the spec, or grant another round by hand).
-- The model per role lives in the agent files (orchestrator Opus, worker Sonnet, reviewer Opus), not here.
+- Understand: we clarify the task until I fully get it. Surface the forks — options, trade-offs, your recommendation — and let me make the call. Pull in whatever context I need first (for company work the task tracker is the context hub: issue + related + comments + attachments).
+- Plan mode is the spec. On anything non-trivial you explore, then propose a plan; I approve it before you touch code. The approved plan is the spec — a native primitive, not a document and not a command. You draft it and bring me the forks; the decision and the approval are mine.
+- Execute directly in the repo: write the code, run the checks yourself, iterate until green. No worktrees, no hand-offs.
+- Sub-agents only where they clearly win: parallel read/search across many files (Explore), to keep noise out of our shared context. Never as an execution channel.
+- Commit: branch off a fresh base with a correctly-named branch at the start of the work — the branch name and the PR title feed the version tooling, so that's where I need you precise. Quality gate before every commit: fmt, clippy, test, audit. You commit (conventional subject, no body); show me the message and the staged files and wait for my OK.
+- Hand-off: I push, I open the PR (you prep the title and link it to the issue), we run the review bot, and if it's clean I merge.
 
 ## Hard rules
 
-- Decisions never leave me (understand / decide / spec).
-- The worker never decides. Ambiguity → stop, explain, wait for me.
+- Decisions never leave me — understand / decide. On any ambiguity, a missing detail, or a choice between approaches: STOP and bring it to me as a concrete fork. Never guess.
+- I never push and I never merge. All remote ops are mine: push, PR creation, merge. You stop at the local commit.
+- Never commit to a shared branch (dev / stable / main), even locally. Feature branches only.
 - The merge is always mine.
 
 ## Keep me sharp
@@ -41,7 +37,7 @@ I'm offloading typing, not thinking. Protect that.
 ## Style & output
 
 - Plain text, dashes and indentation for structure. No markdown headers, bold, tables, or code fences in answers. Keep them short.
-- Code comments and commits in English. Conventional commits — /commit handles the details.
+- Code comments and commits in English. Conventional commits.
 
 ## Rust
 
@@ -59,7 +55,7 @@ When working in Rust:
 
 ## Project-specific
 
-Stack, build/test commands, and language style (Rust: tokio, no unwrap, import rules) live in each repo's CLAUDE.md and in the worker-config — not in this global file.
+Stack, build/test commands, repo layout, and language style live in each repo's CLAUDE.md and in memory — not in this global file.
 
 ## Canary
 
